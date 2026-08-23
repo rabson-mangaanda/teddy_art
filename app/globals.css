@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — Tailwind v4 CSS-based theme
+   ============================================================ */
+@theme inline {
+  /* Brand colors */
+  --color-cream:        #f5f3f0;
+  --color-cream-dark:   #e8e4df;
+  --color-cream-deeper: #d9d4cd;
+
+  --color-purple-50:  #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-300: #d8b4fe;
+  --color-purple-400: #c084fc;
+  --color-purple-500: #a855f7;
+
+  --color-charcoal:       #1f2937;
+  --color-charcoal-light: #374151;
+  --color-charcoal-muted: #6b7280;
+
+  /* Semantic aliases */
+  --color-background: var(--color-cream);
+  --color-surface:    #ffffff;
+  --color-text:       var(--color-charcoal);
+  --color-muted:      var(--color-charcoal-muted);
+  --color-accent:     var(--color-purple-300);
+  --color-accent-hover: var(--color-purple-400);
+
+  /* Typography — Inter for body, Playfair Display for headings */
+  --font-sans:    var(--font-inter);
+  --font-display: var(--font-playfair);
+
+  /* Radius */
+  --radius-card: 1rem;
+  --radius-btn:  0.5rem;
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Utility classes (non-Tailwind custom utilities)
+   ============================================================ */
+
+/* Glass morphism nav */
+.glass-nav {
+  background: rgba(245, 243, 240, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200, 195, 190, 0.3);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+}
+
+/* CTA button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.btn-ripple:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Artwork card hover */
+.art-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.art-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Float animation (hero image) */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
+
+/* Fade in up (GSAP-like entrance, CSS fallback) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+.fade-in-up-delay {
+  animation: fadeInUp 0.7s ease-out 0.2s both;
+}
+
+/* Status badge */
+.badge-available { background: #dcfce7; color: #166534; }
+.badge-reserved  { background: #fef9c3; color: #854d0e; }
+.badge-sold      { background: #f3f4f6; color: #6b7280; }
+
+/* Print protection */
+@media print {
+  body { display: none; }
+}
