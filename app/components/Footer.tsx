@@ -84,8 +84,8 @@ export default function Footer() {
           {/* Contact & hours */}
           <div>
             <h4 className="text-lg font-bold mb-4">Business Hours</h4>
-            <p className="text-gray-400 mb-1">Mon – Fri: 9:00 AM – 5:00 PM</p>
-            <p className="text-gray-400 mb-1">Saturday: 10:00 AM – 3:00 PM</p>
+            <p className="text-gray-400 mb-1">Mon – Fri: 7:30 AM – 8:30 PM</p>
+            <p className="text-gray-400 mb-1">Saturday: 8:00 AM – 6:00 PM</p>
             <p className="text-gray-400 mb-5">Sunday: Closed</p>
             <div className="mt-4 space-y-2 text-sm text-gray-400">
               <div className="flex items-center gap-2">

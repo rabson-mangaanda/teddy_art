@@ -70,10 +70,10 @@ export default function ContactPage() {
                 <hr className="border-cream-deeper my-4" />
                 <div className="space-y-1">
                   <p className="text-sm text-charcoal-muted font-medium flex justify-between">
-                    <span>Mon - Fri:</span> <span>9:00 AM - 5:00 PM</span>
+                    <span>Mon - Fri:</span> <span>7:30 AM - 8:30 PM</span>
                   </p>
                   <p className="text-sm text-charcoal-muted font-medium flex justify-between">
-                    <span>Saturday:</span> <span>10:00 AM - 3:00 PM</span>
+                    <span>Saturday:</span> <span>8:00 AM - 6:00 PM</span>
                   </p>
                 </div>
               </div>
